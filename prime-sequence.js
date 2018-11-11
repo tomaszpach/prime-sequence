@@ -6,19 +6,19 @@
     const C = [2, 9, 2, 5, 7, 10];
 
     // Slow, brute force
-    function isPrime(n) {
-        if (n < 2 || n % 1) return false;
-        for (let i = 2; i < n; i++) {
-            if (n % i === 0) return false;
+    function isPrime(number) {
+        if (number < 2 || number % 1) return false;
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) return false;
         }
         return true;
     }
 
-    function createOccurrenceIndex(arr) {
+    function createOccurrenceIndex(array) {
         const index = {};
 
-        for (let i = 0, n = arr.length; i < n; i++) {
-            const key = arr[i];
+        for (let i = 0, n = array.length; i < n; i++) {
+            const key = array[i];
             if (index.hasOwnProperty(key)) {
                 index[key]++;
             } else {
@@ -41,18 +41,18 @@
         return filtered;
     }
 
-    function sequence(a, b) {
-        let index = createOccurrenceIndex(b);
+    function sequence(array1, array2) {
+        let index = createOccurrenceIndex(array2);
         index = filterIndexByValue(index, isPrime);
 
-        return a.filter(n => !index.hasOwnProperty(n));
+        return array1.filter(number => !index.hasOwnProperty(number));
     }
 
-    function isArraysEqual(arr1, arr2) {
-        if (arr1.length !== arr2.length)
+    function areArraysEqual(array1, array2) {
+        if (array1.length !== array2.length)
             return false;
-        for (var i = arr1.length; i--;) {
-            if (arr1[i] !== arr2[i])
+        for (let i = array1.length; i--;) {
+            if (array1[i] !== array2[i])
                 return false;
         }
 
@@ -61,6 +61,6 @@
 
     console.log('it is:', sequence(A, B));
     console.log('should be:', C);
-    console.log('is the same?', isArraysEqual(sequence(A, B), C))
+    console.log('is the same?', areArraysEqual(sequence(A, B), C))
 
 })();
