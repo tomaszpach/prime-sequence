@@ -60,8 +60,10 @@
         return array1.filter(number => !index.hasOwnProperty(number));
     }
 
-    console.log('it is:', sequence(A, B));
+    const sequenceArray = sequence(A, B);
+
+    console.log('it is:', sequenceArray);
     console.log('should be:', C);
-    console.log('is the same?', areArraysEqual(sequence(A, B), C))
+    console.log('is the same?', areArraysEqual(sequenceArray, C))
 
 })();
