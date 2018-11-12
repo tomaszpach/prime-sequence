@@ -5,6 +5,18 @@
     const B = [2, 1, 3, 4, 3, 10, 6, 6, 1, 7, 10, 10, 10];
     const C = [2, 9, 2, 5, 7, 10];
 
+    // Check if arrays are the same
+    function areArraysEqual(array1, array2) {
+        if (array1.length !== array2.length)
+            return false;
+        for (let i = array1.length; i--;) {
+            if (array1[i] !== array2[i])
+                return false;
+        }
+
+        return true;
+    }
+
     // Slow, brute force
     function isPrime(number) {
         if (number < 2 || number % 1) return false;
@@ -46,17 +58,6 @@
         index = filterIndexByValue(index, isPrime);
 
         return array1.filter(number => !index.hasOwnProperty(number));
-    }
-
-    function areArraysEqual(array1, array2) {
-        if (array1.length !== array2.length)
-            return false;
-        for (let i = array1.length; i--;) {
-            if (array1[i] !== array2[i])
-                return false;
-        }
-
-        return true;
     }
 
     console.log('it is:', sequence(A, B));
