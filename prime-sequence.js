@@ -1,3 +1,10 @@
+/**
+ * Comment for someone who is checking this
+ * 'areArraysEqual' function is only my helper function to easy inform me that the arrays are still not the same
+ * in 'isPrime' I was also thinking about using Sieve Of Eratosthenes to check for prime numbers
+ * This one took me about 45 minutes
+ */
+
 (() => {
     console.clear();
 
