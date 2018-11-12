@@ -17,7 +17,7 @@
         return true;
     }
 
-    // Slow, brute force
+    // Slow, brute force checking if number is prime
     function isPrime(number) {
         if (number < 2 || number % 1) return false;
         for (let i = 2; i < number; i++) {
@@ -30,11 +30,11 @@
         const index = {};
 
         for (let i = 0, n = array.length; i < n; i++) {
-            const key = array[i];
-            if (index.hasOwnProperty(key)) {
-                index[key]++;
+            const numberFromArray = array[i];
+            if (index.hasOwnProperty(numberFromArray)) {
+                index[numberFromArray]++;
             } else {
-                index[key] = 1;
+                index[numberFromArray] = 1;
             }
         }
 
